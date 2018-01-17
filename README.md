@@ -70,8 +70,8 @@ Clone this repo and perform
 ```
 mkdir build && cd build
 cmake ../src/  && make
-./ExtendedKF 
-./ExtendedKF 
+./UnscentedKF 
+./UnscentedKF 
 ```
 
 
