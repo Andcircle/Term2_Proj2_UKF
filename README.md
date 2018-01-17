@@ -6,24 +6,34 @@ The target of this project is to apply Unscented Kalman Filter to fuse data from
 ## Content of this repo
 - `scr` source code directory:
   - `main.cpp` - communicate with simulation tool, call functions to run the Kalman filter and calculate RMSE
-  - `ukf.cpp`- initializes the Unscented Kalman filter, implements predict and update steps for Radar and Lidar respectively,       
-  calculate NIS. 
+  - `ukf.cpp`- initializes the Unscented Kalman filter, implements predict and update steps for Radar and Lidar respectively,   calculate NIS. 
   - `tools.cpp` - calculate RMSE
 
 ## Unscented Kalman Filter Implementation
 
 1.Initialize states with first measurement.
+
 2.Predict:
+
   2.1. Parameter argumentation, find sigma points.
+  
   2.2. Predict sigma points of next step using discrete process function.
+  
   2.3. Calculate new mean and covariance of states in next step.
+  
 3.Upate:
+
   3.1. Calculate predicted measurements of existing sigma points using measurement function, 
   calculate mean and covariance of predicted measurements.
+  
   3.2. Calculate Kalman gain.
+  
   3.3. Update mean and covariance of states
+  
   3.4. Calculate NIS
+  
 4.Tune parameters according to final NIS results
+
 
 ## Result
 
@@ -47,6 +57,7 @@ UKF
 |Vy   |0.2212       |0.3545     |0.3339 |
 
 Radar: above NIS 95% line        4.8%
+
 Lidar: above NIS 95% line        3.2%
 
 This means the process noise is propably over estimated, but within a reaonable range.
